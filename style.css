@@ -1,0 +1,55 @@
+html, body { 
+    height: 100%; 
+    padding: 0;
+    margin: 0;
+    font-family: courier, monospace;
+    color: white;
+}
+
+div { 
+    width: 50%; 
+    height: 50%; 
+    float: left; 
+}
+
+#label {
+    font-size: 35px;
+}
+
+#clock {
+    font-weight: bold;
+    font-size: 50px;
+}
+
+#clock_one { 
+    background: #ff9900;
+    font-weight: bold;
+    font-size: 50px;
+    background-image: url("London.jpg");
+    background-size:  800px, 1000px;
+}
+
+#clock_two { 
+    background: #00ccff;
+    font-weight: bold;
+    font-size: 50px; 
+    background-image: url("BuenosAires.jpg");
+    background-size:  800px, 1000px;
+}
+
+#clock_three { 
+	color: #5c5c3d;
+    background: #5c5c3d; 
+    font-weight: bold;
+    font-size: 50px;
+    background-image: url("SanFrancisco.jpg");
+    background-size:  800px, 1000px;
+}
+
+#clock_four { 
+    background: #ff0000; 
+    font-weight: bold;
+    font-size: 50px;
+    background-image: url("Moscow.jpg");
+    background-size:  800px, 1000px;
+}

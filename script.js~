@@ -1,0 +1,101 @@
+
+
+  function displayTime() {
+    var currentTime = new Date();
+    var utf = 2;
+		
+
+    var hours = currentTime.getHours()+utf;
+    var minutes = currentTime.getMinutes();
+    var seconds = currentTime.getSeconds();
+
+
+    if(hours < 10) {
+      hours = "0" + hours;
+    }
+	if (hours > 24){
+	
+	hours = hours-24;
+	}
+    if(minutes < 10) {
+      minutes = "0" + minutes;
+    }        
+    if(seconds < 10) {
+       seconds = "0" + seconds;
+    }
+
+
+    var clockDivLondon = document.getElementById('clock');
+
+    clockDivLondon.innerText = hours + ":" + minutes + ":" + seconds;
+
+
+
+   //Buenos Aires
+
+   
+
+     function displayTimeBuenosAires() {
+    var currentTime = new Date();
+    var utf1 = 0;
+		
+
+    var hours = currentTime.getHours();
+    var minutes = currentTime.getMinutes();
+    var seconds = currentTime.getSeconds();
+
+
+    if(hours < 10) {
+      hours = "0" + hours;
+    }
+	if (hours > 24){
+	
+	hours = hours-24;
+	}
+    if(minutes < 10) {
+      minutes = "0" + minutes;
+    }        
+    if(seconds < 10) {
+       seconds = "0" + seconds;
+    }
+	}
+   
+   
+   var clockDivBuenosAires = document.getElementById('clockBuenosAires');
+   clockDivBuenosAires.innerText = hours + ":" + minutes + ":" + seconds;
+
+   //San Pablo
+   var utf = 3;
+   var clockDivSanPablo = document.getElementById('clockSanPablo');
+   clockDivSanPablo.innerText = hours + ":" + minutes + ":" + seconds;
+   
+
+   //Moscow	
+   var utf = 3;
+   var clockDivMoscow = document.getElementById('clockMoscow');
+   clockDivMoscow.innerText = hours + ":" + minutes + ":" + seconds;
+   	
+  }
+
+    
+  
+	
+//(reciclo el código y lo aplico a los demás paises)
+//buenos aires
+   
+
+  displayTime();
+  displayTimeBuenosAires();
+
+  setInterval(displayTime, 1000);
+  setInterval(displayTimeBuenosAires, 1000);
+
+  console.log(hours);
+
+
+  
+
+
+
+
+
