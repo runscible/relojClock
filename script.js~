@@ -1,82 +1,74 @@
 
 
+$(document).ready( function() {
+
   function displayTime() {
     var currentTime = new Date();
-    var utf = 2;
-		
-
-    var hours = currentTime.getHours()+utf;
-    var minutes = currentTime.getMinutes();
-    var seconds = currentTime.getSeconds();
-
-
-    if(hours < 10) {
-      hours = "0" + hours;
-    }
-	if (hours > 24){
-	
-	hours = hours-24;
-	}
-    if(minutes < 10) {
-      minutes = "0" + minutes;
-    }        
-    if(seconds < 10) {
-       seconds = "0" + seconds;
-    }
-
-
-    var clockDivLondon = document.getElementById('clock');
-
-    clockDivLondon.innerText = hours + ":" + minutes + ":" + seconds;
-
-
-
-   //Buenos Aires
-
-   
-
-     function displayTimeBuenosAires() {
-    var currentTime = new Date();
-    var utf1 = 0;
+    var gmt = 4;
+    
 		
 
     var hours = currentTime.getHours();
     var minutes = currentTime.getMinutes();
     var seconds = currentTime.getSeconds();
+    var globalHours = hours+gmt;
 
 
-    if(hours < 10) {
-      hours = "0" + hours;
+    if(globalHours < 10) {
+      globalHours = "0" + globalHours;
     }
-	if (hours > 24){
+
 	
-	hours = hours-24;
-	}
     if(minutes < 10) {
       minutes = "0" + minutes;
     }        
     if(seconds < 10) {
        seconds = "0" + seconds;
     }
-	}
-   
-   
-   var clockDivBuenosAires = document.getElementById('clockBuenosAires');
-   clockDivBuenosAires.innerText = hours + ":" + minutes + ":" + seconds;
+	
 
-   //San Pablo
-   var utf = 3;
-   var clockDivSanPablo = document.getElementById('clockSanPablo');
-   clockDivSanPablo.innerText = hours + ":" + minutes + ":" + seconds;
+    var clockDivLondon = document.getElementById('clock');
+
+    clockDivLondon.innerText = globalHours +":" + minutes + ":" + seconds;
+	
+
+
+
+   //Buenos Aires
+   var gmt = 0;
+   var clockDivBuenosAires = document.getElementById('clockBuenosAires');
+   clockDivBuenosAires.innerText = hours+":"+minutes+":"+seconds;
+   
+
+
+   //San Francisco
+   var gmt = -4;
+   var globalHours = hours+gmt;
+	if(globalHours<0){
+	  globalHours = globalHours+24;
+	} 
+
+
+	 
+	
+   var clockDivSanFrancisco = document.getElementById('clockSanFrancisco');
+   clockDivSanFrancisco.innerText = globalHours + ":" + minutes + ":" + seconds;
    
 
    //Moscow	
-   var utf = 3;
+   var gmt = 6;
+   var globalHours = hours+gmt;
+	alert(globalHours);	
+	if(globalHours>24){
+	globalHours = globalHours-24;
+	}	
+
    var clockDivMoscow = document.getElementById('clockMoscow');
-   clockDivMoscow.innerText = hours + ":" + minutes + ":" + seconds;
+   clockDivMoscow.innerText = globalHours+ ":" + minutes + ":" + seconds;
    	
   }
-
+   
+    
     
   
 	
@@ -85,17 +77,20 @@
    
 
   displayTime();
-  displayTimeBuenosAires();
+  setInterval(displayTime,1000);
+  
 
-  setInterval(displayTime, 1000);
-  setInterval(displayTimeBuenosAires, 1000);
-
-  console.log(hours);
-
+  
 
   
 
 
+  
+
+});
 
 
 
+
+
+  
